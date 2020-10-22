@@ -1,4 +1,5 @@
 Dockerfile
+Dockerfile.image
 **/.DS_Store
 .idea/
 **/__pycache__
