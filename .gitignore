@@ -9,3 +9,4 @@ Dockerfile.image
 *.out
 .ipynb_checkpoints
 venv/
+*.tar
