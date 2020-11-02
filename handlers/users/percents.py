@@ -7,6 +7,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQu
 from loader import dp
 from states.numbers import Numbers
 
+WORD_TYPE = '___'
 
 choice = InlineKeyboardMarkup(row_width=4)
 choice.insert(InlineKeyboardButton(text='1', callback_data='percent:1'))
@@ -54,7 +55,7 @@ async def percent_1(call: CallbackQuery, state: FSMContext):
     try:
         quest_number = int(quest_number) - 1
         await state.update_data(question_number=quest_number)
-        await call.message.answer(str(questions[quest_number]).format('___', '___') + '\n' + STANDART_TEXT)
+        await call.message.answer(str(questions[quest_number]).format(WORD_TYPE, WORD_TYPE) + '\n' + STANDART_TEXT)
         await Numbers.Num1.set()
     except ValueError:
         await call.message.answer('Server has problem with InlineKeyboard')

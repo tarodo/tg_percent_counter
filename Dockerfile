@@ -1,8 +1,7 @@
-FROM python-tg:latest
+FROM python:3.8-slim
+RUN pip install -r requirements.txt
 
 WORKDIR /home
-
-ENV TELEGRAM_API_TOKEN=""
 
 ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
